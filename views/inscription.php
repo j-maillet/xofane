@@ -6,7 +6,9 @@ require __DIR__ . '/../includes/header.php';
 
 <main class="auth-page">
     <section class="auth-card" aria-labelledby="auth-title">
-        <h2 id="auth-title" class="auth-title">Créer un compte Xofane</h2>
+        <h2 id="auth-title" class="auth-title">Créer un compte 
+            <span class="auth-logo">Xofane</span>
+        </h2>
         <p class="auth-subtitle">Sauvegardez vos titres, créez vos playlists et suivez vos créateurs préférés.</p>
         
         <?php if (!empty($erreurs)): ?>
