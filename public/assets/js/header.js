@@ -71,4 +71,18 @@
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') hide();
     });
+
+    // Placeholder de recherche raccourci sur tablette / mobile (<= 1024px)
+    const searchInput = header.querySelector('input[data-placeholder-desktop]');
+    const compactMedia = window.matchMedia('(max-width: 1024px)');
+
+    const updatePlaceholder = () => {
+        if (!searchInput) return;
+        searchInput.placeholder = compactMedia.matches
+            ? searchInput.dataset.placeholderMobile
+            : searchInput.dataset.placeholderDesktop;
+    };
+
+    updatePlaceholder();
+    window.addEventListener('resize', updatePlaceholder);
 })();

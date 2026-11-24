@@ -27,7 +27,9 @@ require_once __DIR__ . '/functions.php';
                 <button type="submit" class="search-submit" aria-label="Rechercher" data-tooltip="Rechercher">
                     <?php afficher_icone('search', 'icon-search'); ?>
                 </button>
-                <input type="search" name="q" placeholder="Artistes, titres, podcasts..." aria-label="Rechercher">
+                <input type="search" name="q" placeholder="Artistes, titres, podcasts..."
+                       data-placeholder-desktop="Artistes, titres, podcasts..."
+                       data-placeholder-mobile="Rechercher..." aria-label="Rechercher">
                 <button type="button" class="filter-btn" aria-label="Parcourir" data-tooltip="Parcourir">
                     <?php afficher_icone('filter', 'icon-filter'); ?>
                 </button>
@@ -42,9 +44,8 @@ require_once __DIR__ . '/functions.php';
                     <a href="/notifications.php" class="notification-btn" aria-label="Notifications" data-tooltip="Notifications">
                         <?php afficher_icone('bell', 'icon-bell'); ?>
                     </a>
-                    <a href="/profil.php" class="profile-avatar-link" aria-label="Profil" data-tooltip="Profil">
-                        <img src="<?= htmlspecialchars($_SESSION['user']['avatar'] ?? '/assets/images/default-avatar.png') ?>"
-                             alt="" class="avatar-img">
+                    <a href="/profil.php" class="user-profile-btn" aria-label="Profil" data-tooltip="Profil">
+                        <?= htmlspecialchars((string) ($_SESSION['user']['nom'] ?? $_SESSION['user']['pseudo'] ?? 'Profil')) ?>
                     </a>
                 </nav>
             <?php else: ?>
@@ -52,6 +53,9 @@ require_once __DIR__ . '/functions.php';
                 <nav class="auth-buttons" aria-label="Authentification">
                     <a href="/register.php" class="btn-signup">S'inscrire</a>
                     <a href="/login.php" class="btn-login">Se connecter</a>
+                    <a href="/login.php" class="auth-icon-btn" aria-label="Se connecter" data-tooltip="Se connecter">
+                        <?php afficher_icone('user', 'icon-user', 'svg'); ?>
+                    </a>
                 </nav>
             <?php endif; ?>
         </section>
