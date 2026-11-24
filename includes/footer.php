@@ -12,9 +12,9 @@
 
             <nav class="footer-nav" aria-label="Navigation de pied de page">
                 <h3>Navigation</h3>
-                <a href="/index.php">Accueil</a>
-                <a href="/decouvrir.php">Découvrir</a>
-                <a href="/bibliotheque.php">Bibliothèque</a>
+                <a href="/index.php?page=accueil">Accueil</a>
+                <a href="/index.php?page=decouvrir">Découvrir</a>
+                <a href="/index.php?page=bibliotheque">Bibliothèque</a>
             </nav>
 
             <section class="footer-socials" aria-labelledby="footer-socials-title">

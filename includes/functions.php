@@ -36,3 +36,11 @@ function afficher_icone(string $nom, string $classe = '', string $dossier = 'ico
     $attributs = 'class="icon ' . htmlspecialchars($classe, ENT_QUOTES) . '" aria-hidden="true" focusable="false"';
     echo preg_replace('/<svg\b/', '<svg ' . $attributs, $cache[$cle], 1);
 }
+
+/**
+ * Indique si un utilisateur est actuellement connecté.
+ */
+function estConnecte(): bool
+{
+    return !empty($_SESSION['user']);
+}
