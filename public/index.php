@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once __DIR__ . '/../config/database.php';
+
 $page = $_GET['page'] ?? 'accueil';
 
 switch ($page) {
@@ -9,11 +11,15 @@ switch ($page) {
         break;
 
     case 'connexion':
-        require __DIR__ . '/../views/connexion.php';
+        require_once __DIR__ . '/../controllers/AuthentificationControleur.php';
+        $auth = new AuthentificationControleur($pdo);
+        $auth->connexion();
         break;
 
     case 'inscription':
-        require __DIR__ . '/../views/inscription.php';
+        require_once __DIR__ . '/../controllers/AuthentificationControleur.php';
+        $auth = new AuthentificationControleur($pdo);
+        $auth->inscription();
         break;
 
     default:
