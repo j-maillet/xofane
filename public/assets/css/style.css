@@ -135,7 +135,7 @@ a { color: inherit; text-decoration: none; }
 
     &:focus-within {
         background-color: var(--surface-hover);
-        box-shadow: inset 0 0 0 2px var(--text);
+        box-shadow: inset 0 0 0 1px var(--text);
     }
 
     /* Au survol, seule la loupe change de couleur (le placeholder reste en --text-muted) */
